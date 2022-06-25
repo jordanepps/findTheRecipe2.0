@@ -1,7 +1,4 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import DragDropFile from '../components/DragDropFile';
-import PasteImageLink from '../components/PasteImageLink';
+import SearchBox from '../components/SearchBox';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -9,8 +6,7 @@ export default function Home() {
     <div className={styles.container}>
       <h1 className="text-5xl">Find The Recipe</h1>
       <div className="py-20">
-        <DragDropFile />
-        <PasteImageLink />
+        <SearchBox />
       </div>
     </div>
   );
