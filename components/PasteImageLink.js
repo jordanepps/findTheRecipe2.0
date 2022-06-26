@@ -16,7 +16,7 @@ function PasteImageLink() {
   };
 
   const submitURL = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' || e.target.type === 'button') {
       e.preventDefault();
       validate(url);
       // TODO: Only attempt fetch if url is valid
