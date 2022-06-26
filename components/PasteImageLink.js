@@ -7,20 +7,30 @@ function PasteImageLink() {
 
   const validate = (value) => {
     if (validator.isURL(value)) {
-      console.log('function ran');
+      // console.log('function ran');
       setErrorMessage('Is Valid URL');
     } else {
-      console.log('function ran');
+      // console.log('function ran');
       setErrorMessage('Is Not Valid URL');
     }
   };
 
-  function submitURL(e) {
+  const submitURL = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
       validate(url);
+      // TODO: Only attempt fetch if url is valid
+      fetchData();
     }
-  }
+  };
+
+  const fetchData = async () => {
+    fetch('/api/hello')
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
 
   return (
     <form action="" id="image-link" className="py-5">
